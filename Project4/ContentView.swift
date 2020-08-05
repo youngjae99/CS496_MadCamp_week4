@@ -98,11 +98,9 @@ struct TabView : View {
                         .foregroundColor(self.index == 0 ? .white : .primary)
                         
                         if self.index == 0{
-                            
                             Text("Home")
                                 .foregroundColor(self.index == 0 ? .white : .primary)
                         }
-                        
                     }
                     .padding(.vertical,10)
                     .padding(.horizontal)
@@ -198,88 +196,6 @@ struct TabView : View {
     }
 }
 
-/*
-struct LikeTab : View {
-        
-    @State private var showScanner = false
-    @ObservedObject var recognizedText: RecognizedText = RecognizedText()
-    
-    var body: some View{
-        VStack{
-            Text(recognizedText.value)
-            .lineLimit(nil)
-            .padding(.bottom, 40)
-            
-            Button(action: {
-                self.showScanner = true
-            }) {
-                Image(systemName: "doc.text.viewfinder")
-                    .font(.system(size: 40.0))
-                    .foregroundColor(.primary)
-            }
-            
-            HStack{
-                
-                Text("Captured Page")
-                    .fontWeight(.bold)
-                    .font(.title)
-                Spacer()
-            }
-            .padding(.horizontal, 50)
-            
-            ScrollView(.vertical, showsIndicators: false) {
-                VStack{
-                    ForEach(furnitures,id: \.self){furniture in
-                        HStack(spacing: 15){
-                            ForEach(furniture){i in
-                                
-                                VStack{
-                                    
-                                    Image(i.image)
-                                    
-                                    Text(i.title)
-                                        .fontWeight(.bold)
-                                    
-                                    Text(i.price)
-                                        .padding(.top, 6)
-                                }
-                                .padding()
-                                .background(Color.primary.opacity(0.06))
-                                .cornerRadius(10)
-                            }
-                        }
-                    }
-                }
-                .padding()
-            }
-        }
-        .sheet(isPresented: $showScanner){
-            ScanningView(recognizedText: self.$recognizedText.value)
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-    }
-}
-
-struct ThirdTab : View {
-    var body: some View{
-        VStack{
-            Text("Third view")
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-    }
-}
-
-struct AccountTab : View {
-    
-    var body: some View{
-        
-        VStack{
-             
-            Text("Account")
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-    }
-}*/
 
 struct HomeTab : View {
     

@@ -19,9 +19,19 @@ struct SecondTab: View {
             VStack {
                 
                 NavigationLink(destination: CaptureNewView()) {
-                    Image(systemName: "doc.text.viewfinder")
-                    .font(.system(size: 30.0))
-                    .foregroundColor(.primary)
+                    HStack{
+                        Image(systemName: "doc.text.viewfinder")
+                        .font(.system(size: 25.0))
+                        .foregroundColor(.primary)
+                        
+                        Text("New Scan")
+                            .foregroundColor(.primary)
+                    }
+                    .padding(.vertical,10)
+                    .padding(.horizontal)
+                    .background(Color("Color"))
+                    .clipShape(Capsule())
+                    
                 }.navigationBarTitle("List")
                 
                 List(pageData) { page in

@@ -14,28 +14,23 @@ struct CaptureNewView: View {
     
     var body: some View {
         NavigationView {
-            Text(recognizedText.value)
-            .lineLimit(nil)
-            .padding(.bottom, 20)
+            VStack{
+                Text(recognizedText.value)
+                .lineLimit(nil)
+                .padding(.bottom, 20)
                 
-            
-            Button(action: {self.showScanner = true}) {
-                Image(systemName: "doc.text.viewfinder")
-                .font(.system(size: 30.0))
-                .foregroundColor(.primary)
-            }.sheet(isPresented: $showScanner){
-                ScanningView(recognizedText: self.$recognizedText.value)
-            }
-            
-            /*
-            .navigationBarItems(trailing:
-                Button("Help") {
-                    print("Help tapped!")
+                Button(action: {self.showScanner = true}) {
+                    Image(systemName: "doc.text.viewfinder")
+                    .font(.system(size: 30.0))
+                    .foregroundColor(.primary)
+                }.sheet(isPresented: $showScanner){
+                    ScanningView(recognizedText: self.$recognizedText.value)
                 }
-            )*/
-            
+                
+                
+            }
         }
-        .navigationBarTitle("Scan Page")
+        .navigationBarTitle("New Scan")
         
     }
 }
