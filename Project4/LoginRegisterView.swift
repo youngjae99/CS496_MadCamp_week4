@@ -19,8 +19,7 @@ struct Login : View {
       ZStack(alignment: .topTrailing){
         GeometryReader{_ in
           VStack{
-            
-            Image("logo")
+            Image(self.scheme == .dark ? "logo_w": "logo")
             .resizable()
             .scaledToFit()
             .frame(height: 150)

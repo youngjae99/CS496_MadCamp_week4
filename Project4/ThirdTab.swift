@@ -18,7 +18,7 @@ struct ThirdTab: View {
                 Text("Main view")
                     .foregroundColor(Color.primary)
             }
-        }.padding(.horizontal, 30)
+        }.padding(.horizontal, 50)
     }
 }
 

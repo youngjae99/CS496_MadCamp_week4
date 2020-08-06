@@ -55,11 +55,13 @@ struct CaptureNewView: View {
                                 .cornerRadius(12)
                         }.modifier(DismissingKeyboard())
                         
+                        ScrollView{
                         Text(recognizedText.value)
                         .lineLimit(nil)
                         .background(Color.primary.opacity(0.06))
                         .cornerRadius(12)
                         .padding(.bottom, 20)
+                        }
                         
                         Write(txt: $text)
                             .border(Color.gray.opacity(0.5), width: 1)
@@ -74,6 +76,12 @@ struct CaptureNewView: View {
                         })
                         {
                             Text("Save")
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                            .padding(.vertical)
+                            .frame(width: UIScreen.main.bounds.width - 150)
+                            .background(Color.blue)
+                            .cornerRadius(15)
                         }
                         .alert(isPresented: $showingAlert){
                             Alert(title: Text("Save to your list"), message: Text("There is no undo"), primaryButton: .default(Text("Save")) {
@@ -127,7 +135,7 @@ struct Write: UIViewRepresentable {
     tview.isEditable = true
     tview.isUserInteractionEnabled = true
     tview.isScrollEnabled = true
-    tview.text = "Type Something"
+    tview.text = txt//"Type Something"
     tview.textColor = .gray
     tview.font = .systemFont(ofSize: 20)
     tview.delegate = context.coordinator
