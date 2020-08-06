@@ -22,8 +22,9 @@ struct PageRow: View {
                     .frame(alignment: .leading)
                 Text(data.sentence)
                     //.font(.system(size: 50, weight: .bold))
+                    .multilineTextAlignment(.leading)
+                    .lineLimit(3)
                     .foregroundColor(Color.gray)
-                    .frame(height:40,alignment:.leading)
             }
             //.background(Color.blue)
             .cornerRadius(10)
