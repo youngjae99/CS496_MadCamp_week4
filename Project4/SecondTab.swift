@@ -19,7 +19,6 @@ struct SecondTab: View {
     var body: some View {
         NavigationView {
             VStack {
-                
                 NavigationLink(destination: CaptureNewView()) {
                     HStack{
                         /*Image(systemName: "doc.text.viewfinder")

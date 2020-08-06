@@ -38,7 +38,7 @@ struct PageDetail: View {
                     Text(data.title)
                         .font(.title)
                         .fontWeight(.bold)
-                        .foregroundColor(.black)
+                        .foregroundColor(.primary)
                     Spacer()
                 }
                 .padding(.top)

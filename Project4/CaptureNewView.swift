@@ -17,9 +17,15 @@ struct CaptureNewView: View {
     @State private var showingAlert = false
     @State private var showingAlert_2 = false
     @State var title = ""
+    @State var text = "test text"
+    //@State var text = recognizedText.value
+    
+    
+    init(){
+        self.showScanner=true
+    }
     
     var body: some View {
-        
         NavigationView {
             VStack{
                 if(recognizedText.value=="Scan the page you like"){
@@ -37,24 +43,27 @@ struct CaptureNewView: View {
                             .scaledToFit()
                             .frame(width:200)
                             .colorMultiply(.primary)
-                        
                     }
                 }
                 else{
-                    VStack{
-                        TextField("Title", text: self.$title)
-                            .padding(.vertical,10)
-                            .padding(.horizontal, 20)
-                            .background(Color.primary.opacity(0.12))
-                            .cornerRadius(12)
+                    //var text = recognizedText.value
+                    VStack(spacing:0){
+                        Form{
+                            TextField("Title", text: self.$title)
+                                .padding(.horizontal, 20)
+                                .background(Color.primary.opacity(0.12))
+                                .cornerRadius(12)
+                        }.modifier(DismissingKeyboard())
                         
                         Text(recognizedText.value)
                         .lineLimit(nil)
                         .background(Color.primary.opacity(0.06))
                         .cornerRadius(12)
-                        .padding(.bottom, 40)
+                        .padding(.bottom, 20)
                         
-                        
+                        Write(txt: $text)
+                            .border(Color.gray.opacity(0.5), width: 1)
+
                         Button(action:{
                             if(self.title==""){
                                 self.showingAlert_2 = true
@@ -106,8 +115,40 @@ struct MultilineTextView: UIViewRepresentable {
     }
 }
 
-struct CaptureNewView_Previews: PreviewProvider {
-    static var previews: some View {
-        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
+
+struct Write: UIViewRepresentable {
+  @Binding var txt : String
+  func makeCoordinator() -> Write.Coordinator {
+    return Write.Coordinator(parent1: self)
+  }
+    
+  func makeUIView(context: UIViewRepresentableContext<Write>) -> UITextView {
+    let tview = UITextView()
+    tview.isEditable = true
+    tview.isUserInteractionEnabled = true
+    tview.isScrollEnabled = true
+    tview.text = "Type Something"
+    tview.textColor = .gray
+    tview.font = .systemFont(ofSize: 20)
+    tview.delegate = context.coordinator
+    return tview
+  }
+  func updateUIView(_ uiView: UITextView, context: UIViewRepresentableContext<Write>) {
+  }
+    
+  class Coordinator : NSObject, UITextViewDelegate{
+    var parent : Write
+    init(parent1 : Write) {
+      parent = parent1
     }
+    func textViewDidChange(_ textView: UITextView) {
+      self.parent.txt = textView.text
+    }
+    func textViewDidBeginEditing(_ textView: UITextView) {
+      textView.text = ""
+      textView.textColor = .label
+    }
+  }
 }
+
+

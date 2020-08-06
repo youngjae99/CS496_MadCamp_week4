@@ -1,4 +1,8 @@
 import SwiftUI
+import Firebase
+import FirebaseAuth
+
+
 struct MenuView: View {
   @Binding var dark : Bool
   @Binding var show : Bool
@@ -40,6 +44,10 @@ struct MenuView: View {
       Group{
         
         Button(action: {
+            
+            try! Auth.auth().signOut()
+            UserDefaults.standard.set(false, forKey: "status")
+            NotificationCenter.default.post(name: NSNotification.Name("status"), object: nil)
             
         }){
           HStack(spacing: 5){

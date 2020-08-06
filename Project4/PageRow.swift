@@ -22,7 +22,7 @@ struct PageRow: View {
                 Text(data.sentence)
                     //.font(.system(size: 50, weight: .bold))
                     .foregroundColor(Color.gray)
-                    .frame(width:300, height:20)
+                    .frame(height:40)
             }
             Spacer()
         }

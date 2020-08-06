@@ -10,12 +10,15 @@ import SwiftUI
 import ModalView
 
 struct ThirdTab: View {
+    @Environment(\.colorScheme) var scheme
+
     var body: some View {
         ModalPresenter {
             ModalLink(destination: Text("Modal View")) {
                 Text("Main view")
+                    .foregroundColor(Color.primary)
             }
-        }
+        }.padding(.horizontal, 30)
     }
 }
 
