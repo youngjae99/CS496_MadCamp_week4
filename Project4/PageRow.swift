@@ -9,25 +9,34 @@
 import SwiftUI
 
 struct PageRow: View {
-    var page: Page
+    var data: ThreadDataType
     
     var body: some View {
         HStack {
             /*page.image
                 .resizable()
                 .frame(width: 50, height: 50)*/
-            Text(page.name)
+            VStack(alignment: .leading){
+                Text(data.title)
+                    .font(.title)
+                Text(data.sentence)
+                    //.font(.system(size: 50, weight: .bold))
+                    .foregroundColor(Color.gray)
+                    .frame(width:300, height:20)
+            }
             Spacer()
         }
     }
 }
 
+/*
 struct PageRow_Previews: PreviewProvider {
     static var previews: some View {
+        
         Group {
-            PageRow(page: pageData[0])
-            PageRow(page: pageData[1])
+            PageRow(data: {title:"movidic"; sentence:"qwleqwlkaksdkasjdawqwqw"; userID:"youngjae"})
         }
         .previewLayout(.fixed(width: 300, height: 70))
     }
 }
+*/

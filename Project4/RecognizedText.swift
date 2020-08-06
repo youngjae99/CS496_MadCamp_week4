@@ -13,7 +13,7 @@ final class RecognizedText: ObservableObject, Identifiable {
     
     let willChange = PassthroughSubject<RecognizedText, Never>()
     
-    var value: String = "Scan document to see its contents" {
+    var value: String = "Scan the page you like" {
         willSet {
             willChange.send(self)
         }
@@ -23,6 +23,6 @@ final class RecognizedText: ObservableObject, Identifiable {
 
 struct RecongizedText_Previews: PreviewProvider {
     static var previews: some View {
-        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
+        Text("!")
     }
 }

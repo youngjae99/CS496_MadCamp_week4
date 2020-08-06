@@ -8,19 +8,20 @@ A view showing the details for a landmark.
 import SwiftUI
 
 struct PageDetail: View {
-    var page: Page
+    var data: ThreadDataType
 
     var body: some View {
+        /*
         VStack {
             VStack(alignment: .leading) {
-                Text(page.name)
+                Text(data.title)
                     .font(.title)
 
                 HStack(alignment: .top) {
-                    Text(page.park)
+                    Text(data.sentence)
                         .font(.subheadline)
                     Spacer()
-                    Text(page.state)
+                    Text(data.userID)
                         .font(.subheadline)
                 }
             }
@@ -28,12 +29,45 @@ struct PageDetail: View {
 
             Spacer()
         }
-        .navigationBarTitle(Text(page.name), displayMode: .inline)
+        .navigationBarTitle(Text(data.title), displayMode: .inline)
+        */
+        
+        VStack{
+            HStack{
+                Text(data.title)
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .foregroundColor(.black)
+                Spacer()
+            }
+            .padding(.top)
+            .padding(.horizontal)
+                                
+            Text(data.sentence)
+                .multilineTextAlignment(.leading)
+                .padding(.top)
+                .padding(.horizontal)
+                // Button..
+                
+            Button(action: {}) {
+                Text("Make Decoration")
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                    .padding(.vertical)
+                    .frame(width: UIScreen.main.bounds.width - 150)
+                    .background(Color.blue)
+                    .cornerRadius(15)
+            }
+            .padding(.top,25)
+            .padding(.bottom)
+        }
     }
 }
 
+/*
 struct PageDetail_Previews: PreviewProvider {
     static var previews: some View {
         PageDetail(page: pageData[0])
     }
 }
+*/

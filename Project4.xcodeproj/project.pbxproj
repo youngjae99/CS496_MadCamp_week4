@@ -19,6 +19,8 @@
 		5D2E041124DB34EF00CE60AC /* FourthTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2E041024DB34EF00CE60AC /* FourthTab.swift */; };
 		5D2E041624DB38E200CE60AC /* ModalView in Frameworks */ = {isa = PBXBuildFile; productRef = 5D2E041524DB38E200CE60AC /* ModalView */; };
 		5D2E041824DB3CA800CE60AC /* CaptureNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2E041724DB3CA800CE60AC /* CaptureNewView.swift */; };
+		5D2E041A24DB778D00CE60AC /* FirebaseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2E041924DB778D00CE60AC /* FirebaseData.swift */; };
+		5D2E041C24DB77BD00CE60AC /* ThreadDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2E041B24DB77BD00CE60AC /* ThreadDataType.swift */; };
 		5D36945224D9C79200B62703 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D36945124D9C79200B62703 /* AppDelegate.swift */; };
 		5D36945424D9C79200B62703 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D36945324D9C79200B62703 /* SceneDelegate.swift */; };
 		5D36945624D9C79200B62703 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D36945524D9C79200B62703 /* ContentView.swift */; };
@@ -76,6 +78,8 @@
 		5D2E040E24DB34DE00CE60AC /* ThirdTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdTab.swift; sourceTree = "<group>"; };
 		5D2E041024DB34EF00CE60AC /* FourthTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthTab.swift; sourceTree = "<group>"; };
 		5D2E041724DB3CA800CE60AC /* CaptureNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureNewView.swift; sourceTree = "<group>"; };
+		5D2E041924DB778D00CE60AC /* FirebaseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseData.swift; sourceTree = "<group>"; };
+		5D2E041B24DB77BD00CE60AC /* ThreadDataType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadDataType.swift; sourceTree = "<group>"; };
 		5D36944E24D9C79200B62703 /* Project4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D36945124D9C79200B62703 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D36945324D9C79200B62703 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +160,8 @@
 			children = (
 				5D2E03FA24DB15A200CE60AC /* Data.swift */,
 				5D2E03FC24DB162300CE60AC /* Page.swift */,
+				5D2E041924DB778D00CE60AC /* FirebaseData.swift */,
+				5D2E041B24DB77BD00CE60AC /* ThreadDataType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -507,6 +513,8 @@
 				5D36945224D9C79200B62703 /* AppDelegate.swift in Sources */,
 				5D2E03FF24DB190900CE60AC /* PageRow.swift in Sources */,
 				5D36948E24D9F83C00B62703 /* RecognizedText.swift in Sources */,
+				5D2E041C24DB77BD00CE60AC /* ThreadDataType.swift in Sources */,
+				5D2E041A24DB778D00CE60AC /* FirebaseData.swift in Sources */,
 				5D2E03F824DB11C000CE60AC /* SecondTab.swift in Sources */,
 				5D2E03F324DAFBE200CE60AC /* TextRecognizer.swift in Sources */,
 				5D36948C24D9F67700B62703 /* ScanningView.swift in Sources */,

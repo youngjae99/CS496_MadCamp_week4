@@ -7,6 +7,9 @@ target 'Project4' do
 
   pod 'Firebase/Analytics'
   pod 'Firebase/MLVision'
+  pod 'Firebase/Core'
+  pod 'Firebase/Firestore'
+  pod 'Firebase/Storage'
   # Pods for Project4
 
   target 'Project4Tests' do
