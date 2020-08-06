@@ -1,7 +1,7 @@
 # CS496_MadCamp_week4
 ###2020 여름 몰입캠프 4주차 자율과제 : SwiftUI iOS application development
 
-<a href="https://imgbb.com/"><img src="https://i.ibb.co/BCyLGv5/booklip.png" alt="booklip" border="0"></a><br /><a target='_blank' href='https://geojsonlint.com/'>geojson types</a><br />
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/BCyLGv5/booklip.png" alt="booklip" border="0" width="300"></a><br /><a target='_blank' href='https://geojsonlint.com/'></a>
 
 # Booklip
 
