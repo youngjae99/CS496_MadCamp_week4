@@ -73,6 +73,7 @@ struct CaptureNewView: View {
                                 self.showingAlert_2 = true
                             }
                             else{
+                                print("save start")
                                 self.showingAlert = true
                             }
                         })
@@ -93,10 +94,10 @@ struct CaptureNewView: View {
                                 self.mode.wrappedValue.dismiss()
                                 
                             }, secondaryButton: .cancel())
-                        }
+                        }/*
                         .alert(isPresented: $showingAlert_2){
                             Alert(title: Text("Warning"), message: Text("Please enter title"), dismissButton: .default(Text("OK")))
-                        }
+                        }*/
                         Spacer()
                     }
                 }
