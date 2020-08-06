@@ -16,12 +16,11 @@ struct ThirdTab: View {
         ModalPresenter {
             ModalLink(destination: Text("Modal View")) {
                 Text("Main view")
-                    .foregroundColor(Color.primary)
             }
         }
         .frame(maxWidth:.infinity, maxHeight:.infinity)
         .padding(.horizontal, 50)
-        .background(Color.blue)
+        .background(Color.yellow)
     }
 }
 

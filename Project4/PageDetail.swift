@@ -57,7 +57,7 @@ struct PageDetail: View {
                         .padding(.vertical)
                         .frame(width: UIScreen.main.bounds.width - 150)
                         .background(Color.blue)
-                        .cornerRadius(15)
+                        .cornerRadius(40)
                 }
                 .padding(.top,25)
                 .padding(.bottom)

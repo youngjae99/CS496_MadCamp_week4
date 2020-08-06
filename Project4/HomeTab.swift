@@ -51,7 +51,6 @@ struct HomeTab: View {
                         
 //                        UrlImageView(urlString: "https://images-na.ssl-images-amazon.com/images/I/41eOX0cBT8L._SX331_BO1,204,203,200_.jpg")
                         
-                        
                         Image("book1")
                             .resizable()
                             .scaledToFit()
@@ -63,10 +62,11 @@ struct HomeTab: View {
                             .font(.title)
                             .padding(.top,0)
                         
-                        Text("$1200")
+                        Text("Elin Hilderbrand")
                             .foregroundColor(.gray)
                             .padding(.top,8)
                             .padding(.bottom)
+                        
                     }
                     .background(
                         Color.primary.opacity(0.06)
@@ -98,9 +98,7 @@ struct HomeTab: View {
                                     Image(i.image)
                                         .resizable()
                                         .scaledToFit()
-                                        .padding(.horizontal, 20)
                                         .frame(height: 150.0)
-                                        
                                         .cornerRadius(5)
                                     
                                     Text(i.title)
@@ -109,7 +107,8 @@ struct HomeTab: View {
                                     Text(i.author)
                                         .padding(.top, 6)
                                 }
-                                .padding(.horizontal, 20)
+                                .padding(.horizontal,10)
+                                .frame(height: 300.0)
                                 .background(Color.primary.opacity(0.06))
                                 .cornerRadius(10)
                             }

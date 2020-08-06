@@ -76,7 +76,7 @@ struct SecondTab: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
-        .padding(.horizontal, 30)
+        .padding(.horizontal, 10)
     }
 }
 /*

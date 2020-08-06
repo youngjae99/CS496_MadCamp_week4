@@ -48,12 +48,11 @@ struct CaptureNewView: View {
                 else{
                     //var text = recognizedText.value
                     VStack(spacing:0){
-                        Form{
-                            TextField("Title", text: self.$title)
+                        TextField("Title", text: self.$title)
+                                .frame(height: 40)
                                 .padding(.horizontal, 20)
                                 .background(Color.primary.opacity(0.12))
                                 .cornerRadius(12)
-                        }.modifier(DismissingKeyboard())
                         
                         ScrollView{
                             Text(recognizedText.value)
@@ -62,10 +61,12 @@ struct CaptureNewView: View {
                             .cornerRadius(12)
                             .padding(.bottom, 20)
                         }
-                        .frame(height: 20)
+                        .padding(.bottom, 20)
+                        .frame(maxHeight: .infinity)
                         
-                        Write(txt: $text)
-                            .border(Color.gray.opacity(0.5), width: 1)
+
+//                        Write(txt: $text)
+//                            .border(Color.gray.opacity(0.5), width: 200)
 
                         Button(action:{
                             if(self.title==""){
@@ -82,7 +83,7 @@ struct CaptureNewView: View {
                                 .padding(.vertical)
                                 .frame(width: UIScreen.main.bounds.width - 150)
                                 .background(Color.blue)
-                                .cornerRadius(15)
+                                .cornerRadius(40)
                         }
                         .alert(isPresented: $showingAlert){
                             Alert(title: Text("Save to your list"), message: Text("There is no undo"), primaryButton: .default(Text("Save")) {
@@ -100,10 +101,11 @@ struct CaptureNewView: View {
                     }
                 }
                 
-                Spacer()
             }
         }
         .navigationBarTitle("New Scan")
+        .padding(.top,0)
+        .background(Color.blue)
         
     }
 }
