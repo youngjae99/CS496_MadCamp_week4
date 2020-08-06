@@ -18,7 +18,7 @@ struct ContentView: View {
         // WWDC 2020 will solve this...
         NavigationView{
             
-            TabView()
+            TabView(showMenu: false)
                 .navigationBarTitle("",displayMode: .inline)
                 .navigationBarHidden(true)
         }
@@ -38,21 +38,32 @@ struct TabView : View {
     @Environment(\.colorScheme) var scheme // color system -> dark / bright
     @State private var showingAlert = false
     
+    @State var showMenu = false
+    @State var dark = false
+    @State var show = false
+    
     //let TR = TextRecognizer("1")
     
     var body: some View{
-        VStack(spacing: 0){
+        
+        let drag = DragGesture()
+        .onEnded{
+          if $0.translation.width < -100 {
+            withAnimation{
+              self.showMenu = false
+            }
+          }
+        }
+        
+        return VStack(spacing: 0){
             ZStack{
                 HStack(spacing: 15){
                     Button(action: {
-                        self.showingAlert = true
+                        withAnimation {self.showMenu = true}
                     }) {
                         Image("menu")
                             // for dark mode adoption....
                             .foregroundColor(.primary)
-                    }
-                    .alert(isPresented: $showingAlert){
-                        Alert(title:Text("메뉴 기능 개발중"), message:Text("기다리세요 손님 하하"), dismissButton: .default(Text("넹")))
                     }
                     
                     Spacer()
@@ -67,7 +78,6 @@ struct TabView : View {
                     }
                 }
                 .padding(.horizontal)
-                
                 Text("Bookly")
                     .font(.title)
                     .fontWeight(.bold)
@@ -75,6 +85,35 @@ struct TabView : View {
             .padding(.horizontal, 40)
             .padding(.bottom, 10)
             
+            GeometryReader{ geometry in
+              // alignment: .leading을 안하면 보이지 않음
+                ZStack(alignment: .leading){
+                    HomeTab()
+                        .opacity(self.index == 0 ? 1 : 0)
+                        .offset(x: self.showMenu ? UIScreen.main.bounds.width / 1.5 : 0)
+                        .disabled(self.showMenu ? true : false)
+                    SecondTab()
+                        .opacity(self.index == 1 ? 1 : 0)
+                    .offset(x: self.showMenu ? UIScreen.main.bounds.width / 1.5 : 0)
+                    .disabled(self.showMenu ? true : false)
+                    ThirdTab()
+                        .opacity(self.index == 2 ? 1 : 0)
+                    .offset(x: self.showMenu ? UIScreen.main.bounds.width / 1.5 : 0)
+                    .disabled(self.showMenu ? true : false)
+                    FourthTab()
+                        .opacity(self.index == 3 ? 1 : 0)
+                    .offset(x: self.showMenu ? UIScreen.main.bounds.width / 1.5 : 0)
+                    .disabled(self.showMenu ? true : false)
+                    if self.showMenu{
+                      HStack{
+                        MenuView(dark: self.$dark, show: self.$show)
+                        .transition(.move(edge: .leading))
+                      }
+                    }
+                }
+              .gesture(drag)
+            }
+            /*
             ZStack{
                 HomeTab()
                     .opacity(self.index == 0 ? 1 : 0)
@@ -84,15 +123,13 @@ struct TabView : View {
                     .opacity(self.index == 2 ? 1 : 0)
                 FourthTab()
                     .opacity(self.index == 3 ? 1 : 0)
-            }
+            }*/
             
             HStack{
                 Button(action: {
                     self.index = 0
                 }) {
-                    
                     HStack(spacing: 6){
-                     
                         Image(systemName: "questionmark")
                         .font(.system(size: 20.0, weight: .bold))
                         .foregroundColor(self.index == 0 ? .white : .primary)
@@ -107,9 +144,7 @@ struct TabView : View {
                     .background(self.index == 0 ? Color("Color") : Color.clear)
                     .clipShape(Capsule())
                 }
-                
                 Spacer(minLength: 0)
-                
                 Button(action: {
                     self.index = 1
                 }) {
@@ -117,42 +152,28 @@ struct TabView : View {
                         Image(systemName: "book")
                             .font(.system(size: 20.0, weight: .bold))
                             .foregroundColor(self.index == 1 ? .white : .primary)
-                        /*
-                        Image("heart")
-                            // dark mode adoption...
-                            .foregroundColor(self.index == 2 ? .white : .primary)*/
-                        
                         if self.index == 1{
                             Text("Capture")
                                 .foregroundColor(self.index == 1 ? .white : .primary)
                         }
-                        
-                        
                     }
                     .padding(.vertical,10)
                     .padding(.horizontal)
                     .background(self.index == 1 ? Color("Color") : Color.clear)
                     .clipShape(Capsule())
                 }
-                
                 Spacer(minLength: 0)
-                
                 Button(action: {
                     self.index = 2
                 }) {
-                    
                     HStack(spacing: 6){
-                     
                         Image(systemName: "paintbrush")
                         .font(.system(size: 20.0, weight: .bold))
                         .foregroundColor(self.index == 2 ? .white : .primary)
-                        
                         if self.index == 2{
-                            
                             Text("Decorate")
                                 .foregroundColor(self.index == 2 ? .white : .primary)
                         }
-                        
                     }
                     .padding(.vertical,10)
                     .padding(.horizontal)
@@ -164,19 +185,15 @@ struct TabView : View {
                 Button(action: {
                     self.index = 3
                 }) {
-                    
                     HStack(spacing: 6){
-                     
                         Image(systemName: "person")
                         .font(.system(size: 20.0, weight: .bold))
                         .foregroundColor(self.index == 3 ? .white : .primary)
-                        
                         if self.index == 3{
                             
                             Text("Account")
                                 .foregroundColor(self.index == 3 ? .white : .primary)
                         }
-                        
                     }
                     .padding(.vertical,10)
                     .padding(.horizontal)

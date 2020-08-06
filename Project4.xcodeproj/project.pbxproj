@@ -32,6 +32,7 @@
 		5D36948824D9E60300B62703 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5D36948724D9E60300B62703 /* GoogleService-Info.plist */; };
 		5D36948C24D9F67700B62703 /* ScanningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D36948B24D9F67700B62703 /* ScanningView.swift */; };
 		5D36948E24D9F83C00B62703 /* RecognizedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D36948D24D9F83C00B62703 /* RecognizedText.swift */; };
+		5D5FDFAA24DBEC3700E40FAC /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5FDFA924DBEC3700E40FAC /* MenuView.swift */; };
 		7CAD420FC1FAE8DF9FE92047 /* Pods_Project4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7464E67F6E2EBCE59FE0E994 /* Pods_Project4.framework */; };
 		9967C8BD47A464E5AE91F4FF /* Pods_Project4_Project4UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA744B18185EC180312CA9B /* Pods_Project4_Project4UITests.framework */; };
 /* End PBXBuildFile section */
@@ -97,6 +98,7 @@
 		5D36948724D9E60300B62703 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5D36948B24D9F67700B62703 /* ScanningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanningView.swift; sourceTree = "<group>"; };
 		5D36948D24D9F83C00B62703 /* RecognizedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognizedText.swift; sourceTree = "<group>"; };
+		5D5FDFA924DBEC3700E40FAC /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		6CC341993C450A7D46CEB379 /* Pods-Project4-Project4UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project4-Project4UITests.release.xcconfig"; path = "Target Support Files/Pods-Project4-Project4UITests/Pods-Project4-Project4UITests.release.xcconfig"; sourceTree = "<group>"; };
 		7464E67F6E2EBCE59FE0E994 /* Pods_Project4.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project4.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		80870882870090738AB82E70 /* Pods-Project4Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project4Tests.release.xcconfig"; path = "Target Support Files/Pods-Project4Tests/Pods-Project4Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				5D2E040E24DB34DE00CE60AC /* ThirdTab.swift */,
 				5D2E041024DB34EF00CE60AC /* FourthTab.swift */,
 				5D2E041724DB3CA800CE60AC /* CaptureNewView.swift */,
+				5D5FDFA924DBEC3700E40FAC /* MenuView.swift */,
 			);
 			path = Project4;
 			sourceTree = "<group>";
@@ -517,6 +520,7 @@
 				5D2E041A24DB778D00CE60AC /* FirebaseData.swift in Sources */,
 				5D2E03F824DB11C000CE60AC /* SecondTab.swift in Sources */,
 				5D2E03F324DAFBE200CE60AC /* TextRecognizer.swift in Sources */,
+				5D5FDFAA24DBEC3700E40FAC /* MenuView.swift in Sources */,
 				5D36948C24D9F67700B62703 /* ScanningView.swift in Sources */,
 				5D2E041824DB3CA800CE60AC /* CaptureNewView.swift in Sources */,
 				5D2E03FD24DB162300CE60AC /* Page.swift in Sources */,
