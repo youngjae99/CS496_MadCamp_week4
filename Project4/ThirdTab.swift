@@ -18,7 +18,10 @@ struct ThirdTab: View {
                 Text("Main view")
                     .foregroundColor(Color.primary)
             }
-        }.padding(.horizontal, 50)
+        }
+        .frame(maxWidth:.infinity, maxHeight:.infinity)
+        .padding(.horizontal, 50)
+        .background(Color.blue)
     }
 }
 

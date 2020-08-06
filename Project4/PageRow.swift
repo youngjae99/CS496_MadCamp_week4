@@ -16,14 +16,21 @@ struct PageRow: View {
             /*page.image
                 .resizable()
                 .frame(width: 50, height: 50)*/
+            Image("3dbook")
+                .resizable()
+                .frame(width: 50, height: 50)
             VStack(alignment: .leading){
                 Text(data.title)
                     .font(.title)
+                    .frame(alignment: .leading)
                 Text(data.sentence)
                     //.font(.system(size: 50, weight: .bold))
                     .foregroundColor(Color.gray)
-                    .frame(height:40)
+                    .frame(height:40,alignment:.leading)
+                
             }
+            //.background(Color.blue)
+            .cornerRadius(10)
             Spacer()
         }
     }

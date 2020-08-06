@@ -52,7 +52,7 @@ struct HomeTab: View {
 //                        UrlImageView(urlString: "https://images-na.ssl-images-amazon.com/images/I/41eOX0cBT8L._SX331_BO1,204,203,200_.jpg")
                         
                         
-                        Image("1")
+                        Image("book1")
                             .resizable()
                             .scaledToFit()
                             .frame(height: 200.0)
@@ -95,16 +95,21 @@ struct HomeTab: View {
                             ForEach(furniture){i in
                                 
                                 VStack{
-                                    
                                     Image(i.image)
+                                        .resizable()
+                                        .scaledToFit()
+                                        .padding(.horizontal, 20)
+                                        .frame(height: 150.0)
+                                        
+                                        .cornerRadius(5)
                                     
                                     Text(i.title)
                                         .fontWeight(.bold)
                                     
-                                    Text(i.price)
+                                    Text(i.author)
                                         .padding(.top, 6)
                                 }
-                                .padding()
+                                .padding(.horizontal, 20)
                                 .background(Color.primary.opacity(0.06))
                                 .cornerRadius(10)
                             }
@@ -119,3 +124,30 @@ struct HomeTab: View {
         }
     }
 }
+
+struct Furniture : Identifiable,Hashable{
+    
+    var id : Int
+    var image : String
+    var title : String
+    var author : String
+}
+
+// 2D array For Grid FUnction....
+
+var furnitures = [
+    [
+    Furniture(id: 0, image: "book1", title: "Where the Crawdads Sing", author: "Delia Owens"),
+    Furniture(id: 1, image: "book2", title: "Midnight Sun", author: "Stephenie")
+    ],
+    
+    [
+    Furniture(id: 2, image: "book3", title: "Live Free Or Die: America", author: "Sean Hannity"),
+    Furniture(id: 3, image: "book4", title: "It Was All a Lie: How the Republican Party Became Donald Trump", author: "Stuart Stevens")
+    ],
+    
+    [
+    Furniture(id: 4, image: "book5", title: "How to Destroy America in Three Easy Steps", author: "Ben Shapiro"),
+    Furniture(id: 5, image: "book6", title: "The Plus: Self-Help for People Who Hate Self-Help", author: "Greg Gutfed")
+    ]
+]

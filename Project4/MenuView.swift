@@ -34,9 +34,9 @@ struct MenuView: View {
       .clipShape(Circle())
         
       VStack(spacing: 12){
-        Text("Irene")
+        Text("Root")
             .fontWeight(.bold)
-        Text("Red Velvet")
+        Text("Administrator")
             .font(.caption)
       }
       .padding(.top, 20)

@@ -33,14 +33,8 @@ struct SecondTab: View {
                     
                 }.navigationBarTitle("List")
                 
-                /*
-                List(pageData) { page in
-                    ModalPresenter {
-                        ModalLink(destination: PageDetail(page: page)) {
-                            PageRow(page: page)
-                        }
-                    }
-                }*/
+                
+
                 List(datas.data) { data in
                     ModalPresenter {
                         ModalLink(destination: PageDetail(data: data)) {
@@ -48,6 +42,36 @@ struct SecondTab: View {
                         }
                     }
                 }
+                .frame(height:400)
+                .background(Color.gray)
+ 
+                /*
+                ScrollView(.horizontal, showsIndicators: false){
+                    HStack(spacing:15){
+                        //ForEach(1...6, id:\.self){i in
+                        ForEach(datas.data){ data in
+                            VStack{
+                                Text(data.title)
+                                Text(data.sentence)
+                            }
+                            .frame(width: 200, height: 200)
+                            .background(Color.blue)
+                            .cornerRadius(15)
+                            
+                            
+                            ModalPresenter {
+                                ModalLink(destination: PageDetail(data: data)) {
+                                    PageRow(data: data)
+                                }
+                            }
+                        }
+                    }
+                }
+                .frame(height:300)
+                .background(Color.gray)
+                
+                */
+                Spacer()
                 
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
