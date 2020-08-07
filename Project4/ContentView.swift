@@ -109,7 +109,7 @@ struct TabView : View {
                         .opacity(self.index == 1 ? 1 : 0)
                     .offset(x: self.showMenu ? UIScreen.main.bounds.width / 1.5 : 0)
                     .disabled(self.showMenu ? true : false)
-                    ThirdTab()
+                    DecorateTab()
                         .opacity(self.index == 2 ? 1 : 0)
                     .offset(x: self.showMenu ? UIScreen.main.bounds.width / 1.5 : 0)
                     .disabled(self.showMenu ? true : false)
