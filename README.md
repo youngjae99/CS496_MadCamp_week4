@@ -1,7 +1,7 @@
 # CS496_MadCamp_week4
 ###2020 여름 몰입캠프 4주차 자율과제 : SwiftUI iOS application development
 
-<img src="https://raw.github.com/youngjae99/CS496_MadCamp_week4-Booklip/master/booklip.png" height="400" />
+<img src="https://raw.github.com/youngjae99/CS496_MadCamp_week4-Booklip/master/booklip.png" height="200" />
 
 # Booklip
 
